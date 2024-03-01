@@ -54,6 +54,9 @@ BR2_TARGET_UBOOT_FORMAT_CUSTOM=y
 BR2_TARGET_UBOOT_FORMAT_CUSTOM_NAME="u-boot-sunxi-with-spl.bin"
 BR2_TARGET_UBOOT_CUSTOM_DTS_PATH="$(BR2_EXTERNAL_TP2BMC_PATH)/board/tp2bmc/sun8i-t113s-turing-pi2.dtsi $(BR2_EXTERNAL_TP2BMC_PATH)/board/tp2bmc/sun8i-t113s-turing-pi2-v2.4.dts $(BR2_EXTERNAL_TP2BMC_PATH)/board/tp2bmc/sun8i-t113s-turing-pi2-v2.5.dts"
 
+# Busybox customizations
+BR2_PACKAGE_BUSYBOX_CONFIG_FRAGMENT_FILES="$(BR2_EXTERNAL_TP2BMC_PATH)/configs/busybox.config"
+
 # Host packages
 BR2_PACKAGE_HOST_DOSFSTOOLS=y
 BR2_PACKAGE_HOST_GENEXT2FS=y
