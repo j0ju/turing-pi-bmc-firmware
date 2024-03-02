@@ -18,10 +18,11 @@ buildroot=$(basename "$buildroot_url")
 buildroot_folder="${buildroot%.tar.gz}"
 project_root="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-pushd "$download_dir"
-    wget "$buildroot_url"
+(   cd "$download_dir"
+    wget -c "$buildroot_url" -O "${buildroot_url##*/}"
+    sha256sum -c "${project_root}/${buildroot_url##*/}".sha256sum
     tar -xvf "$buildroot"
-popd
+)
 
 if [ -z "$install_dir" ]; then
     # try to install it into the base-dir of the git repo
