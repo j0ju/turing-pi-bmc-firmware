@@ -7,6 +7,7 @@
 #
 #   ./setup_build.sh <install dir> (optional)
 #
+set -e
 
 set -x
 
