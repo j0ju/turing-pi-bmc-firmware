@@ -20,7 +20,7 @@ project_root="$(cd "$(dirname "$0")"; pwd)"
 (   cd "$download_dir"
     wget -c "$buildroot_url" -O "${buildroot_url##*/}"
     sha256sum -c "${project_root}/${buildroot_url##*/}".sha256sum
-    tar -xvf "$buildroot"
+    tar -xf "$buildroot"
 )
 
 if [ -z "$install_dir" ]; then
