@@ -10,7 +10,6 @@ index 37a90c51..e97aee89 100644
  		gpt-location = 992K
 @@ -27,9 +27,22 @@ image tp2-bmc-firmware-sdcard.img {
  		# Equivalent to 370 LEBs of NAND:
- 		size = 45880K
  	}
 +
 +    partition overlay {
