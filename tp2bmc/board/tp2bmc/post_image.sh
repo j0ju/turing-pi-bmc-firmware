@@ -53,3 +53,7 @@ INITRAMFS_DIR=$STAGING_DIR/initramfs/install
 
 create_sdcard  "$BOARD_DIR/genimage.cfg" "$BOARD_DIR/install.scr"
 factory_sdcard
+
+[ -d tmp/ ] && rm -fr tmp/
+genimage --inputpath . --outputpath . \
+          --config "$BOARD_DIR/tp2-bmc-sdonly.cfg"
